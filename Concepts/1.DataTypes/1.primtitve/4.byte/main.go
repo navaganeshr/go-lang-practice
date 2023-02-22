@@ -5,6 +5,8 @@ import "fmt"
 func main() {
 	Charstart := 65
 	Charend := 90
+	var someByte byte = 'A'
+	fmt.Printf("value: %v \n byte: %c \t Type: %T \n", someByte, someByte, someByte)
 	GenerateAlphabets(Charstart, Charend)
 }
 
