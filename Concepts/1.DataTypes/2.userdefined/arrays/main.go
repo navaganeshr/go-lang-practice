@@ -5,20 +5,6 @@ import (
 	"sort"
 )
 
-/*
- Arrays in go ?
-	* 1. Arrays are fixed length and fixed type
-	* 2. Arrays are zero indexed
-	* 3. Arrays are value types
-
-	* Initialization of an array:
-		var <name> [<length>]<type> = [<length>]<type>{<value>, <value>, <value>, ...}
-		* the length of the array is optional
-		var marks [5]int = [5]int{41, 52, 33, 64, 95}
-		marks := [5]int{41, 52, 33, 64, 95}
-		marks := [...]int{41, 52, 33, 64, 95}
-*/
-
 func main() {
 	fruits := [...]string{"apple", "banana", "orange", "grapes", "mango"}
 	marks := [5]int{90, 89, 78, 67, 56}
