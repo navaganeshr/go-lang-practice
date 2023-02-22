@@ -2,23 +2,20 @@ package main
 
 import "fmt"
 
-const (
-	Charstart = 65
-	Charend   = 90
-)
-
 func main() {
-	GenerateAlphabets()
+	Charstart := 65
+	Charend := 90
+	GenerateAlphabets(Charstart, Charend)
 }
 
 // Generate English alphabets
-func GenerateAlphabets() {
+func GenerateAlphabets(charstart int, charend int) {
 	// %c	the character represented by the corresponding Unicode code point
 	// %v the value in a default format
 	// %T	a Go-syntax representation of the type of the value
-
-	for i := Charstart; i <= Charend; i++ {
+	for i := charstart; i <= charend; i++ {
 		fmt.Printf("%v \t %c \t %T ", i, i, i)
 		fmt.Println()
 	}
+
 }
