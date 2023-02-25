@@ -19,25 +19,27 @@
     - [Scoping a variable to an if statement in go](#scoping-a-variable-to-an-if-statement-in-go)
   - [switch loops in go](#switch-loops-in-go)
     - [syntax of switch loops in go](#syntax-of-switch-loops-in-go)
-    - [example of switch loops in go](#example-of-switch-loops-in-go)
+      - [example of switch loops in go](#example-of-switch-loops-in-go)
     - [switch with multiple conditions in go](#switch-with-multiple-conditions-in-go)
     - [switch with no condition in go](#switch-with-no-condition-in-go)
+    - [nested switch in go](#nested-switch-in-go)
     - [what is fallthrough in go ?](#what-is-fallthrough-in-go-)
     - [switch with fallthrough in go](#switch-with-fallthrough-in-go)
     - [switch with multiple conditions and fallthrough in go](#switch-with-multiple-conditions-and-fallthrough-in-go)
     - [switch with no condition and fallthrough in go](#switch-with-no-condition-and-fallthrough-in-go)
   - [for loops in go](#for-loops-in-go)
     - [syntax of for loops in go](#syntax-of-for-loops-in-go)
-    - [example of for loops in go](#example-of-for-loops-in-go)
+      - [example of for loops in go](#example-of-for-loops-in-go)
     - [for with multiple conditions in go](#for-with-multiple-conditions-in-go)
     - [for with no condition in go](#for-with-no-condition-in-go)
-    - [syntax of for loops with no condition in go](#syntax-of-for-loops-with-no-condition-in-go)
-    - [for loop with break in go](#for-loop-with-break-in-go)
+      - [syntax of for loops with no condition in go](#syntax-of-for-loops-with-no-condition-in-go)
+    - [for loop with break and continue in go](#for-loop-with-break-and-continue-in-go)
+      - [for loop with break in go](#for-loop-with-break-in-go)
+      - [for loop with continue in go](#for-loop-with-continue-in-go)
     - [Difference between break and return in go](#difference-between-break-and-return-in-go)
-    - [for loop with continue in go](#for-loop-with-continue-in-go)
     - [label in go ?](#label-in-go-)
-    - [syntax of label in go](#syntax-of-label-in-go)
     - [for loop with goto in go](#for-loop-with-goto-in-go)
+      - [example of for loop with goto in go](#example-of-for-loop-with-goto-in-go)
 
 
 
@@ -189,6 +191,7 @@ func main() {
 
 ## switch loops in go
 switch loops are used to execute a block of code based on the value of a variable.
+The switch case is also used to select one of many code blocks for execution.
 
 ### syntax of switch loops in go
 ```
@@ -203,7 +206,7 @@ switch variable {
         // code block
 }
 ```
-### example of switch loops in go
+#### example of switch loops in go
 ```
 package main
 import "fmt"
@@ -238,6 +241,26 @@ switch {
     case variable1 == value1:
         // code block
     case variable2 == value2:
+        // code block
+    default:
+        // code block
+}
+```
+
+### nested switch in go
+```
+switch variable1 {
+    case value1:
+        // code block
+        switch variable2 {
+            case value2:
+                // code block
+            case value3:
+                // code block
+            default:
+                // code block
+        }
+    case value4:
         // code block
     default:
         // code block
@@ -295,7 +318,7 @@ for init; condition; post {
 }
 ```
 
-### example of for loops in go
+#### example of for loops in go
 ```
 package main
 import "fmt"
@@ -318,14 +341,15 @@ for condition1 && condition2 {
 
 for loops with no condition are used to execute a block of code infinitely.
 
-### syntax of for loops with no condition in go
+#### syntax of for loops with no condition in go
 ```
 for {
     // code block
 }
 ```
 
-### for loop with break in go
+### for loop with break and continue in go
+#### for loop with break in go
 * break is used to exit a for loop.
 * break can be used with for loops with or without a condition.
 
@@ -335,14 +359,7 @@ for {
     break
 }
 ```
-
-### Difference between break and return in go
-* break is used to exit a for loop.
-* return is used to exit a function.
-
-
-
-### for loop with continue in go
+#### for loop with continue in go
 * continue is used to skip the current iteration of a for loop.
 
 syntax of for loop with continue in go
@@ -355,15 +372,17 @@ for {
 ```
 NOTE: 
     * break & continue can be used with for loops with or without a condition.
-    * 
+### Difference between break and return in go
+* break is used to exit a for loop.
+* return is used to exit a function.
+
+
 
 ### label in go ?
 label is a keyword in go which is used to define a label in a function.
 * usecase of label ?
   
-
-
-### syntax of label in go
+syntax of label in go
 ```
 label:
 ```
@@ -379,6 +398,7 @@ for {
         goto label
     }
 }
+```
 label:
 * labels are used to define a label in a function.
 * goto is used to jump to a label in a function.
@@ -386,7 +406,7 @@ label:
 * goto can be used with if loops with or without a condition.
 * goto can be used with switch loops with or without a condition.
 
-### example of for loop with goto in go
+#### example of for loop with goto in go
 ```
 package main
 import "fmt"
