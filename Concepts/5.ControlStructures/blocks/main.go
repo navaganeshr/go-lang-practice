@@ -12,7 +12,5 @@ func main() {
 	} else {
 		fmt.Println("x is less than 5")
 	}
-
 	fmt.Println("x is: ", x)
-
 }
