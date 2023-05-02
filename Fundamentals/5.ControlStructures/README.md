@@ -34,8 +34,9 @@
     - [for with no condition in go](#for-with-no-condition-in-go)
       - [syntax of for loops with no condition in go](#syntax-of-for-loops-with-no-condition-in-go)
     - [for loop with break and continue in go](#for-loop-with-break-and-continue-in-go)
-      - [for loop with break in go](#for-loop-with-break-in-go)
-      - [for loop with continue in go](#for-loop-with-continue-in-go)
+      - [for loop with "break" in go](#for-loop-with-break-in-go)
+      - [for loop with "continue" in go](#for-loop-with-continue-in-go)
+    - [Difference between continue and goto in go](#difference-between-continue-and-goto-in-go)
     - [Difference between break and return in go](#difference-between-break-and-return-in-go)
     - [label in go ?](#label-in-go-)
     - [for loop with goto in go](#for-loop-with-goto-in-go)
@@ -349,9 +350,9 @@ for {
 ```
 
 ### for loop with break and continue in go
-#### for loop with break in go
+#### for loop with "break" in go
 * break is used to exit a for loop.
-* break can be used with for loops with or without a condition.
+* break statement is traditionally used to terminate innermost for or switch statement.
 
 ```
 for {
@@ -359,7 +360,7 @@ for {
     break
 }
 ```
-#### for loop with continue in go
+#### for loop with "continue" in go
 * continue is used to skip the current iteration of a for loop.
 
 syntax of for loop with continue in go
@@ -372,6 +373,14 @@ for {
 ```
 NOTE: 
     * break & continue can be used with for loops with or without a condition.
+
+### Difference between continue and goto in go
+* continue is used to skip the current iteration of a for loop.
+* goto is used to jump to a label in a function.
+* continue can be used with for loops with or without a condition.
+* got to can be used in anywhere in a function.
+  
+
 ### Difference between break and return in go
 * break is used to exit a for loop.
 * return is used to exit a function.
@@ -380,11 +389,18 @@ NOTE:
 
 ### label in go ?
 label is a keyword in go which is used to define a label in a function.
-* usecase of label ?
   
 syntax of label in go
 ```
-label:
+package main
+import "fmt"
+func main() {
+    fmt.Println(1)
+    goto End
+    fmt.Println(2)
+End:
+    fmt.Println(3)
+}
 ```
 
 ### for loop with goto in go
